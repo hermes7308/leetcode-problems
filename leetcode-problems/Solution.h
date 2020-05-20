@@ -20,11 +20,14 @@ class Solution
 {
 public:
 	/// <summary>
-	/// 1. Tow Sum
+	/// 1. Two Sum
 	/// </summary>
 	void runTwoSum();
 	vector<int> twoSum(vector<int>& nums, int target);
 
+	/// <summary>
+	/// 2. Add Two Numbers
+	/// </summary>
 	void runAddTwoNumbers();
 	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 };
