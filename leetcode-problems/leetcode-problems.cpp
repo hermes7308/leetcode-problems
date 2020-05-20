@@ -5,7 +5,7 @@
 int main()
 {
 	Solution* solution = new Solution();
-	solution->runTwoSum();
+	solution->runAddTwoNumbers();
 	delete solution;
 
 	return 0;

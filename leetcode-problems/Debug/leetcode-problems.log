@@ -1,4 +1,3 @@
 ﻿  Solution.cpp
-  leetcode-problems.cpp
-  Generating Code...
+C:\Users\herme\Desktop\hyunkeun.park\workspace\leetcode-problems\leetcode-problems\Solution.cpp(67,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
   leetcode-problems.vcxproj -> C:\Users\herme\Desktop\hyunkeun.park\workspace\leetcode-problems\Debug\leetcode-problems.exe

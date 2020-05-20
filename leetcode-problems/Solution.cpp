@@ -37,3 +37,49 @@ vector<int> Solution::twoSum(vector<int>& nums, int target)
 	}
 	return vector<int>();
 }
+
+void Solution::runAddTwoNumbers()
+{
+	ListNode* l1 = new ListNode(2);
+	l1->next = new ListNode(4);
+	l1->next->next = new ListNode(3);
+
+	ListNode* l2 = new ListNode(5);
+	l2->next = new ListNode(6);
+	l2->next->next = new ListNode(4);
+
+	ListNode* result = addTwoNumbers(l1, l2);
+	cout << result->val << "->" << result->next->val << "->" << result->next->next->val << endl;
+
+	delete result;
+	delete l2;
+	delete l1;
+}
+
+ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2)
+{
+	ListNode* result = new ListNode();
+	ListNode* prev = result;
+	int n = 0;
+
+	while (l1 != nullptr || l2 != nullptr || n != 0)
+	{
+		if (l1 != nullptr)
+		{
+			n += l1->val;
+			l1 = l1->next;
+		}
+
+		if (l2 != nullptr)
+		{
+			n += l2->val;
+			l2 = l2->next;
+		}
+
+		prev->next = new ListNode(n % 10);
+		prev = prev->next;
+		n /= 10;
+	}
+
+	return result->next;
+}
