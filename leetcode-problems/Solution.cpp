@@ -28,8 +28,8 @@ vector<int> Solution::twoSum(vector<int>& nums, int target)
 			{
 				vector<int> result;
 				result.reserve(2);
-				result.push_back(num);
-				result.push_back(numx);
+				result.push_back(distance(nums.begin(), it));
+				result.push_back(distance(nums.begin(), itx));
 
 				return result;
 			}
