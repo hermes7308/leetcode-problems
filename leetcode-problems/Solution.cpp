@@ -115,3 +115,45 @@ int Solution::lengthOfLongestSubstring(string s)
 
 	return lengthOfLongest;
 }
+
+void Solution::runFindMedianSortedArrays()
+{
+	vector<int> num1;
+	num1.push_back(1);
+	num1.push_back(3);
+
+	vector<int> num2;
+	num2.push_back(2);
+
+	assert(2.0 == findMedianSortedArrays(num1, num2));
+
+	vector<int> num3;
+	num3.push_back(1);
+	num3.push_back(2);
+
+	vector<int> num4;
+	num4.push_back(3);
+	num4.push_back(4);
+
+	assert(2.5 == findMedianSortedArrays(num3, num4));
+}
+
+double Solution::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
+{
+	nums1.reserve(nums1.size() + distance(nums2.begin(), nums2.end()));
+	nums1.insert(nums1.end(), nums2.begin(), nums2.end());
+	sort(nums1.begin(), nums1.end());
+
+	int n = 0;
+
+	if (nums1.size() % 2 == 0)
+	{
+		n = nums1.size() / 2;
+		return double(nums1[n - 1] + nums1[n]) / 2;
+	}
+	else
+	{
+		n = (nums1.size() / 2) + 1;
+		return nums1[n - 1];
+	}
+}

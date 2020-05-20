@@ -5,7 +5,7 @@
 int main()
 {
 	Solution* solution = new Solution();
-	solution->runLengthOfLongestSubstring();
+	solution->runFindMedianSortedArrays();
 	delete solution;
 
 	return 0;

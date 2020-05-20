@@ -5,6 +5,7 @@
 #include<math.h>
 #include<assert.h>
 #include<map>
+#include <algorithm>
 
 using namespace std;
 
@@ -38,5 +39,11 @@ public:
 	/// </summary>
 	void runLengthOfLongestSubstring();
 	int lengthOfLongestSubstring(string s);
+
+	/// <summary>
+	/// 4. Median of Two Sorted Arrays
+	/// </summary>
+	void runFindMedianSortedArrays();
+	double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
 };
 
