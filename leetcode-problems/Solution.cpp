@@ -153,7 +153,7 @@ double Solution::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 	}
 	else
 	{
-		n = (nums1.size() / 2) + 1;
-		return nums1[n - 1];
+		n = (nums1.size() / 2);
+		return nums1[n];
 	}
 }
