@@ -3,6 +3,8 @@
 #include<iostream>
 #include<vector>
 #include<math.h>
+#include<assert.h>
+#include<map>
 
 using namespace std;
 
@@ -30,5 +32,11 @@ public:
 	/// </summary>
 	void runAddTwoNumbers();
 	ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+
+	/// <summary>
+	/// 3. Longest Substring Without Repeating Characters
+	/// </summary>
+	void runLengthOfLongestSubstring();
+	int lengthOfLongestSubstring(string s);
 };
 

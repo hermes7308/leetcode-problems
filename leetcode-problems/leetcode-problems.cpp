@@ -5,7 +5,7 @@
 int main()
 {
 	Solution* solution = new Solution();
-	solution->runAddTwoNumbers();
+	solution->runLengthOfLongestSubstring();
 	delete solution;
 
 	return 0;

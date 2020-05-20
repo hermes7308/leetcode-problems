@@ -83,3 +83,35 @@ ListNode* Solution::addTwoNumbers(ListNode* l1, ListNode* l2)
 
 	return result->next;
 }
+
+void Solution::runLengthOfLongestSubstring()
+{
+	assert(lengthOfLongestSubstring("abcabcbb"), 3);
+	assert(lengthOfLongestSubstring("bbbbb"), 1);
+	assert(lengthOfLongestSubstring("pwwkew"), 3);
+}
+
+int Solution::lengthOfLongestSubstring(string s)
+{
+	map<char, int> mapper;
+	int startIndex = 0;
+	int lengthOfLongest = 0;
+
+	for (int index = 0; index < s.length(); index++)
+	{
+		char character = s.at(index);
+		if (mapper.find(character) != mapper.end() && mapper[character] >= startIndex)
+		{
+			startIndex = mapper[character] + 1;
+		}
+		else
+		{
+			int currentLength = index - startIndex + 1;
+			lengthOfLongest = lengthOfLongest > currentLength ? lengthOfLongest : currentLength;
+		}
+
+		mapper[character] = index;
+	}
+
+	return lengthOfLongest;
+}
