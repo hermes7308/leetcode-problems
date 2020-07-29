@@ -224,3 +224,43 @@ vector<int> Solution::runningSum(vector<int>& nums)
 
 	return result;
 }
+
+void Solution::runMinCostToMoveChips()
+{
+	vector<int> chips1;
+	chips1.push_back(1);
+	chips1.push_back(2);
+	chips1.push_back(3);
+
+	int result1 = minCostToMoveChips(chips1);
+	assert(result1 == 1);
+
+	vector<int> chips2;
+	chips2.push_back(2);
+	chips2.push_back(2);
+	chips2.push_back(2);
+	chips2.push_back(3);
+	chips2.push_back(3);
+
+	int result2 = minCostToMoveChips(chips2);
+	assert(result2 == 2);
+}
+
+int Solution::minCostToMoveChips(vector<int>& chips)
+{
+	int even = 0;
+	int odd = 0;
+	for (int i = 0; i < chips.size(); i++)
+	{
+		if (chips[i] % 2 == 0)
+		{
+			even++;
+		}
+		else
+		{
+			odd++;
+		}
+	}
+
+	return even > odd ? odd : even;
+}

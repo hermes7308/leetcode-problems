@@ -47,11 +47,16 @@ public:
 	void runFindMedianSortedArrays();
 	double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
 
-
 	/// <summary>
 	/// 1480. Running Sum of 1d Array
 	/// </summary>
 	void runRunningSum();
 	vector<int> runningSum(vector<int>& nums);
+
+	/// <summary>
+	/// 1217. Play with Chips
+	/// </summary>
+	void runMinCostToMoveChips();
+	int minCostToMoveChips(vector<int>& chips);
 };
 

@@ -5,6 +5,6 @@
 int main()
 {
 	Solution solution;
-	solution.runRunningSum();
+	solution.runMinCostToMoveChips();
 	return 0;
 }
