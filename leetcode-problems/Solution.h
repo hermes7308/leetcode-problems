@@ -58,5 +58,11 @@ public:
 	/// </summary>
 	void runMinCostToMoveChips();
 	int minCostToMoveChips(vector<int>& chips);
+
+	/// <summary>
+	/// 1037. Valid Boomerang
+	/// </summary>
+	void runIsBoomerang();
+	bool isBoomerang(vector<vector<int>>& points);
 };
 

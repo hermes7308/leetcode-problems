@@ -5,6 +5,6 @@
 int main()
 {
 	Solution solution;
-	solution.runMinCostToMoveChips();
+	solution.runIsBoomerang();
 	return 0;
 }

@@ -264,3 +264,98 @@ int Solution::minCostToMoveChips(vector<int>& chips)
 
 	return even > odd ? odd : even;
 }
+
+void Solution::runIsBoomerang()
+{
+	vector<int> point11;
+	point11.push_back(1);
+	point11.push_back(1);
+	vector<int> point12;
+	point12.push_back(2);
+	point12.push_back(3);
+	vector<int> point13;
+	point13.push_back(3);
+	point13.push_back(2);
+
+	vector<vector<int>> points1;
+	points1.push_back(point11);
+	points1.push_back(point12);
+	points1.push_back(point13);
+
+	bool result1 = isBoomerang(points1);
+	assert(result1 == true);
+
+	vector<int> point21;
+	point21.push_back(1);
+	point21.push_back(1);
+	vector<int> point22;
+	point22.push_back(2);
+	point22.push_back(2);
+	vector<int> point23;
+	point23.push_back(3);
+	point23.push_back(3);
+
+	vector<vector<int>> points2;
+	points2.push_back(point21);
+	points2.push_back(point22);
+	points2.push_back(point23);
+
+	bool result2 = isBoomerang(points2);
+	assert(result2 == false);
+
+	vector<int> point31;
+	point31.push_back(0);
+	point31.push_back(0);
+	vector<int> point32;
+	point32.push_back(1);
+	point32.push_back(2);
+	vector<int> point33;
+	point33.push_back(0);
+	point33.push_back(1);
+
+	vector<vector<int>> points3;
+	points3.push_back(point31);
+	points3.push_back(point32);
+	points3.push_back(point33);
+
+	bool result3 = isBoomerang(points3);
+	assert(result3 == true);
+}
+
+bool Solution::isBoomerang(vector<vector<int>>& points)
+{
+	vector<int> point1 = points[0];
+	vector<int> point2 = points[1];
+	vector<int> point3 = points[2];
+
+	double side1 = sqrt(double(pow(point1[0] - point2[0], 2) + pow(point1[1] - point2[1], 2)));
+	double side2 = sqrt(double(pow(point2[0] - point3[0], 2) + pow(point2[1] - point3[1], 2)));
+	double side3 = sqrt(double(pow(point3[0] - point1[0], 2) + pow(point3[1] - point1[1], 2)));
+
+	vector<double> triangle;
+	triangle.push_back(side1);
+	triangle.push_back(side2);
+	triangle.push_back(side3);
+
+	int maxIndex = 0;
+	for (int i = 1; i < triangle.size(); i++)
+	{
+		if (triangle[maxIndex] < triangle[i])
+		{
+			maxIndex = i;
+		}
+	}
+
+	double sumTwoSide = 0;
+	for (int i = 0; i < triangle.size(); i++)
+	{
+		if (i == maxIndex)
+		{
+			continue;
+		}
+
+		sumTwoSide += triangle[i];
+	}
+
+	return sumTwoSide > triangle[maxIndex];
+}
