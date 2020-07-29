@@ -157,3 +157,70 @@ double Solution::findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
 		return nums1[n];
 	}
 }
+
+void Solution::runRunningSum()
+{
+	vector<int> nums1;
+	nums1.push_back(1);
+	nums1.push_back(2);
+	nums1.push_back(3);
+	nums1.push_back(4);
+
+	vector<int> result1 = runningSum(nums1);
+	assert(result1[0] == 1);
+	assert(result1[1] == 3);
+	assert(result1[2] == 6);
+	assert(result1[3] == 10);
+
+
+	vector<int> nums2;
+	nums2.push_back(1);
+	nums2.push_back(1);
+	nums2.push_back(1);
+	nums2.push_back(1);
+	nums2.push_back(1);
+
+	vector<int> result2 = runningSum(nums2);
+	assert(result2[0] == 1);
+	assert(result2[1] == 2);
+	assert(result2[2] == 3);
+	assert(result2[3] == 4);
+	assert(result2[4] == 5);
+
+	vector<int> nums3;
+	nums3.push_back(3);
+	nums3.push_back(1);
+	nums3.push_back(2);
+	nums3.push_back(10);
+	nums3.push_back(1);
+
+	vector<int> result3 = runningSum(nums3);
+	assert(result3[0] == 3);
+	assert(result3[1] == 4);
+	assert(result3[2] == 6);
+	assert(result3[3] == 16);
+	assert(result3[4] == 17);
+}
+
+vector<int> Solution::runningSum(vector<int>& nums)
+{
+	vector<int> result;
+	result.reserve(nums.size());
+
+	for (int i = 0; i < nums.size(); i++)
+	{
+		int val;
+
+		if (i - 1 >= 0)
+		{
+			val = result[i - 1] + nums[i];
+		}
+		else
+		{
+			val = nums[i];
+		}
+		result.push_back(val);
+	}
+
+	return result;
+}

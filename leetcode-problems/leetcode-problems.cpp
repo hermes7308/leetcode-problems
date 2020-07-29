@@ -4,9 +4,7 @@
 
 int main()
 {
-	Solution* solution = new Solution();
-	solution->runFindMedianSortedArrays();
-	delete solution;
-
+	Solution solution;
+	solution.runRunningSum();
 	return 0;
 }

@@ -5,7 +5,8 @@
 #include<math.h>
 #include<assert.h>
 #include<map>
-#include <algorithm>
+#include<algorithm>
+#include<string>
 
 using namespace std;
 
@@ -45,5 +46,12 @@ public:
 	/// </summary>
 	void runFindMedianSortedArrays();
 	double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
+
+
+	/// <summary>
+	/// 1480. Running Sum of 1d Array
+	/// </summary>
+	void runRunningSum();
+	vector<int> runningSum(vector<int>& nums);
 };
 
