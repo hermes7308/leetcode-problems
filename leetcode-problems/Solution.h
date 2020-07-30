@@ -83,5 +83,11 @@ public:
 	/// </summary>
 	void runNumJewelsInStones();
 	int numJewelsInStones(string J, string S);
+
+	/// <summary>
+	/// 1365. How Many Numbers Are Smaller Than the Current Number
+	/// </summary>
+	void runSmallerNumbersThanCurrent();
+	vector<int> smallerNumbersThanCurrent(vector<int>& nums);
 };
 

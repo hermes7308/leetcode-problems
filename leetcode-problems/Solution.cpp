@@ -481,7 +481,45 @@ int Solution::numJewelsInStones(string J, string S)
 			count++;
 		}
 
-	}	
+	}
 
 	return count;
+}
+
+void Solution::runSmallerNumbersThanCurrent()
+{
+	vector<int> nums;
+	nums.push_back(8);
+	nums.push_back(1);
+	nums.push_back(2);
+	nums.push_back(2);
+	nums.push_back(3);
+
+	vector<int> result = smallerNumbersThanCurrent(nums);
+	assert(result[0] == 4);
+	assert(result[1] == 0);
+	assert(result[2] == 1);
+	assert(result[3] == 1);
+	assert(result[4] == 3);
+}
+
+vector<int> Solution::smallerNumbersThanCurrent(vector<int>& nums)
+{
+	vector<int> result;
+	result.reserve(nums.size());
+
+	for(int i = 0; i < nums.size(); i++)
+	{
+		int count = 0;
+		for (int j = 0; j < nums.size(); j++)
+		{
+			if (nums[i] > nums[j])
+			{
+				count++;
+			}
+		}
+		result.push_back(count);
+	}
+
+	return result;
 }

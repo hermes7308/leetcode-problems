@@ -5,6 +5,6 @@
 int main()
 {
 	Solution solution;
-	solution.runNumJewelsInStones();
+	solution.runSmallerNumbersThanCurrent();
 	return 0;
 }

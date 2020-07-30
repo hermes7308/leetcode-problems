@@ -8,4 +8,6 @@ C:\Users\herme\Desktop\hyunkeun.park\workspace\leetcode-problems\leetcode-proble
 C:\Users\herme\Desktop\hyunkeun.park\workspace\leetcode-problems\leetcode-problems\Solution.cpp(341,20): warning C4018: '<': signed/unsigned mismatch
 C:\Users\herme\Desktop\hyunkeun.park\workspace\leetcode-problems\leetcode-problems\Solution.cpp(350,20): warning C4018: '<': signed/unsigned mismatch
 C:\Users\herme\Desktop\hyunkeun.park\workspace\leetcode-problems\leetcode-problems\Solution.cpp(470,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\herme\Desktop\hyunkeun.park\workspace\leetcode-problems\leetcode-problems\Solution.cpp(511,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\herme\Desktop\hyunkeun.park\workspace\leetcode-problems\leetcode-problems\Solution.cpp(514,21): warning C4018: '<': signed/unsigned mismatch
   leetcode-problems.vcxproj -> C:\Users\herme\Desktop\hyunkeun.park\workspace\leetcode-problems\Debug\leetcode-problems.exe
