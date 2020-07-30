@@ -508,7 +508,7 @@ vector<int> Solution::smallerNumbersThanCurrent(vector<int>& nums)
 	vector<int> result;
 	result.reserve(nums.size());
 
-	for(int i = 0; i < nums.size(); i++)
+	for (int i = 0; i < nums.size(); i++)
 	{
 		int count = 0;
 		for (int j = 0; j < nums.size(); j++)
@@ -519,6 +519,116 @@ vector<int> Solution::smallerNumbersThanCurrent(vector<int>& nums)
 			}
 		}
 		result.push_back(count);
+	}
+
+	return result;
+}
+
+void Solution::runMinSwap()
+{
+	vector<int> A;
+	A.push_back(1);
+	A.push_back(3);
+	A.push_back(5);
+	A.push_back(4);
+
+	vector<int> B;
+	B.push_back(1);
+	B.push_back(2);
+	B.push_back(3);
+	B.push_back(7);
+
+	int result = minSwap(A, B);
+	assert(result == 1);
+}
+
+int Solution::minSwap(vector<int>& A, vector<int>& B)
+{
+	int n1 = 0;
+	int s1 = 1;
+
+	for (int i = 1; i < A.size(); i++)
+	{
+		int n2 = INT_MAX;
+		int s2 = INT_MAX;
+		if (A[i - 1] < A[i] && B[i - 1] < B[i])
+		{
+			n2 = min(n2, n1);
+			s2 = min(s2, s1 + 1);
+		}
+
+		if (A[i - 1] < B[i] && B[i - 1] < A[i])
+		{
+			n2 = min(n2, s1);
+			s2 = min(s2, n1 + 1);
+		}
+		n1 = n2;
+		s1 = s2;
+	}
+
+	return min(n1, s1);
+}
+
+void Solution::runMaxProfit()
+{
+	vector<int> prices;
+	prices.push_back(1);
+	prices.push_back(3);
+	prices.push_back(2);
+	prices.push_back(8);
+	prices.push_back(4);
+	prices.push_back(9);
+
+	int fee = 2;
+
+	int result = maxProfit(prices, fee);
+
+	assert(result == 8);
+}
+
+int Solution::maxProfit(vector<int>& prices, int fee)
+{
+	int cash = 0;
+	int hold = -prices[0];
+	for (int i = 0; i < prices.size(); i++)
+	{
+		cash = max(cash, hold + prices[i] - fee);
+		hold = max(hold, cash - prices[i]);
+	}
+
+	return cash;
+}
+
+void Solution::runShuffle()
+{
+	vector<int> nums1;
+	nums1.push_back(2);
+	nums1.push_back(5);
+	nums1.push_back(1);
+	nums1.push_back(3);
+	nums1.push_back(4);
+	nums1.push_back(7);
+
+	int n1 = 3;
+
+	vector<int> result1 = shuffle(nums1, n1);
+	assert(result1[0] == 2);
+	assert(result1[1] == 3);
+	assert(result1[2] == 5);
+	assert(result1[3] == 4);
+	assert(result1[4] == 1);
+	assert(result1[5] == 7);
+}
+
+vector<int> Solution::shuffle(vector<int>& nums, int n)
+{ 
+	vector<int> result;
+	result.reserve(n * 2);
+	
+	for (int i = 0, j = n; i < n; i++, j++)
+	{
+		result.push_back(nums[i]);
+		result.push_back(nums[j]);
 	}
 
 	return result;

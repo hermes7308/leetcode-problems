@@ -89,5 +89,23 @@ public:
 	/// </summary>
 	void runSmallerNumbersThanCurrent();
 	vector<int> smallerNumbersThanCurrent(vector<int>& nums);
+
+	/// <summary>
+	/// 801. Minimum Swaps To Make Sequences Increasing
+	/// </summary>
+	void runMinSwap();
+	int minSwap(vector<int>& A, vector<int>& B);
+
+	/// <summary>
+	/// Approach #1: Dynamic Programming [Accepted]
+	/// </summary>
+	void runMaxProfit();
+	int maxProfit(vector<int>& prices, int fee);
+
+	/// <summary>
+	/// Approach #1: Dynamic Programming [Accepted]
+	/// </summary>
+	void runShuffle();
+	vector<int> shuffle(vector<int>& nums, int n);
 };
 

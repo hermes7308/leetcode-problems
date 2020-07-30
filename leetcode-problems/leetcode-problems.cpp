@@ -5,6 +5,6 @@
 int main()
 {
 	Solution solution;
-	solution.runSmallerNumbersThanCurrent();
+	solution.runShuffle();
 	return 0;
 }
