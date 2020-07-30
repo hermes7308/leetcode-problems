@@ -5,6 +5,6 @@
 int main()
 {
 	Solution solution;
-	solution.runBinarySearch();
+	solution.runNumJewelsInStones();
 	return 0;
 }

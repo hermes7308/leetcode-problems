@@ -77,5 +77,11 @@ public:
 	void runBinarySearch();
 	int search(vector<int>& nums, int target);
 	int binarySearch(vector<int>& nums, int target, int startIndex, int endIndex);
+
+	/// <summary>
+	/// 771. Jewels and Stones
+	/// </summary>
+	void runNumJewelsInStones();
+	int numJewelsInStones(string J, string S);
 };
 

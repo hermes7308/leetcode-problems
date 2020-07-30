@@ -449,3 +449,39 @@ int Solution::binarySearch(vector<int>& nums, int target, int startIndex, int en
 
 	return binarySearch(nums, target, middleIndex, endIndex);
 }
+
+void Solution::runNumJewelsInStones()
+{
+	string J1 = "aA";
+	string S1 = "aAAbbbb";
+	int result1 = numJewelsInStones(J1, S1);
+	assert(result1 == 3);
+
+	string J2 = "z";
+	string S2 = "ZZ";
+	int result2 = numJewelsInStones(J2, S2);
+	assert(result2 == 0);
+}
+
+int Solution::numJewelsInStones(string J, string S)
+{
+	int count = 0;
+
+	for (int i = 0; i < J.length(); i++)
+	{
+		int cur = 0;
+		char stone = J.at(i);
+		while (true)
+		{
+			string::size_type loc = S.find(stone, cur);
+			if (loc == string::npos) {
+				break;
+			}
+			cur = loc + 1;
+			count++;
+		}
+
+	}	
+
+	return count;
+}
