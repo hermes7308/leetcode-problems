@@ -64,5 +64,18 @@ public:
 	/// </summary>
 	void runIsBoomerang();
 	bool isBoomerang(vector<vector<int>>& points);
+
+	/// <summary>
+	/// 9. Valid Boomerang
+	/// </summary>
+	void runIsPalindrome();
+	bool isPalindrome(int x);
+
+	/// <summary>
+	/// 704. Binary Search
+	/// </summary>
+	void runBinarySearch();
+	int search(vector<int>& nums, int target);
+	int binarySearch(vector<int>& nums, int target, int startIndex, int endIndex);
 };
 

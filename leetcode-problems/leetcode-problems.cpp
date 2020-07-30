@@ -5,6 +5,6 @@
 int main()
 {
 	Solution solution;
-	solution.runIsBoomerang();
+	solution.runBinarySearch();
 	return 0;
 }

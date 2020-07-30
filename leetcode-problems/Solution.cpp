@@ -359,3 +359,93 @@ bool Solution::isBoomerang(vector<vector<int>>& points)
 
 	return sumTwoSide > triangle[maxIndex];
 }
+
+void Solution::runIsPalindrome()
+{
+	int input1 = 121;
+	bool result1 = isPalindrome(input1);
+	assert(result1 == true);
+
+	int input2 = -121;
+	bool result2 = isPalindrome(input2);
+	assert(result2 == false);
+
+	int input3 = 10;
+	bool result3 = isPalindrome(input3);
+	assert(result3 == false);
+}
+
+bool Solution::isPalindrome(int x)
+{
+	if (x < 0) {
+		return false;
+	}
+
+	string str = to_string(x);
+	for (int startIndex = 0, endIndex = str.length() - 1; startIndex <= endIndex; startIndex++, endIndex--)
+	{
+		if (str.at(startIndex) == str.at(endIndex))
+		{
+			continue;
+		}
+
+		return false;
+	}
+
+	return true;
+}
+
+void Solution::runBinarySearch()
+{
+	vector<int> nums1;
+	nums1.push_back(-1);
+	nums1.push_back(0);
+	nums1.push_back(3);
+	nums1.push_back(5);
+	nums1.push_back(9);
+	nums1.push_back(12);
+
+	int target1 = 9;
+
+	int result1 = search(nums1, target1);
+	assert(result1 == 4);
+
+	vector<int> nums2;
+	nums2.push_back(-1);
+	nums2.push_back(0);
+	nums2.push_back(3);
+	nums2.push_back(5);
+	nums2.push_back(9);
+	nums2.push_back(12);
+
+	int target2 = 2;
+
+	int result2 = search(nums2, target2);
+	assert(result2 == -1);
+}
+
+int Solution::search(vector<int>& nums, int target)
+{
+	return binarySearch(nums, target, 0, nums.size());
+}
+
+int Solution::binarySearch(vector<int>& nums, int target, int startIndex, int endIndex)
+{
+	int middleIndex = (startIndex + endIndex) / 2;
+	if (nums[middleIndex] == target)
+	{
+		return middleIndex;
+	}
+
+	if (startIndex == middleIndex || endIndex == middleIndex)
+	{
+		return -1;
+	}
+
+	if (nums[middleIndex] > target)
+	{
+		return binarySearch(nums, target, startIndex, middleIndex);
+	}
+
+	return binarySearch(nums, target, middleIndex, endIndex);
+}
